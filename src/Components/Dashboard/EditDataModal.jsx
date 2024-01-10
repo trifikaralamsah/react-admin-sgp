@@ -54,7 +54,7 @@ function EditDataModal({ openModal, data, handleOk, handleCancel }) {
     if (data) {
       form.setFieldsValue(data);
     }
-  }, [form, data]);
+  }, [form, data, dispatch]);
 
   return (
     <React.Fragment>

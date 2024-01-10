@@ -174,7 +174,9 @@ const TableDataTiga = () => {
   //   },
   // ];
 
-  useEffect(() => {}, [selectedData, dataTabelDashboard]);
+  useEffect(() => {
+    setDataTabelDashboard(dataTable);
+  }, [selectedData, dataTable]);
 
   return (
     <React.Fragment>
