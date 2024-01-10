@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Space, Table, message } from "antd";
+import { Input, Row, Space, Table, message } from "antd";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import DeleteModal from "./DeleteDataModal";
 import { deleteData } from "../../Redux/Reducers/Dashboard/tabelDashboard3";
@@ -13,6 +13,7 @@ const style = {
 };
 
 const TableDataTiga = () => {
+  const { Search } = Input;
   const dataTable = useSelector(
     (state) => state.tabelDashboard3.data,
     shallowEqual
@@ -22,7 +23,25 @@ const TableDataTiga = () => {
   const [isModalOpen, setIsModalOpen] = useState({ modal: "", isOpen: false });
   const dispatch = useDispatch();
   const [messageApi, contextHolder] = message.useMessage();
+  const [dataTabelDashboard, setDataTabelDashboard] = useState(dataTable);
+  const [searchParam] = useState(["ao"]);
 
+  const onSearch = (value) => {
+    if (value === "") {
+      setDataTabelDashboard(dataTable);
+    } else {
+      let resFilter = dataTable.filter((item) => {
+        return searchParam.some((newItem) => {
+          return item[newItem]
+            .toString()
+            .toLowerCase()
+            .includes(value.toLowerCase());
+        });
+      });
+
+      setDataTabelDashboard(resFilter);
+    }
+  };
   const handleSelectedModal = (data, modal) => {
     setSelectedData(data);
     setIsModalOpen({ modal: modal, isOpen: true });
@@ -70,8 +89,6 @@ const TableDataTiga = () => {
     const year = date.getFullYear();
     return `${day} ${month} ${year}`;
   };
-
-  // console.log(dateIndo2(new Date("2023-05-01")));
 
   const columns = [
     {
@@ -157,7 +174,7 @@ const TableDataTiga = () => {
   //   },
   // ];
 
-  useEffect(() => {}, [selectedData]);
+  useEffect(() => {}, [selectedData, dataTabelDashboard]);
 
   return (
     <React.Fragment>
@@ -170,9 +187,30 @@ const TableDataTiga = () => {
           width: "100%",
         }}
       >
+        <Space
+          direction="vertical"
+          style={{
+            display: "flex",
+            alignItems: "end",
+            width: "100%",
+            marginBottom: "10px",
+          }}
+        >
+          <Search
+            addonBefore="Cari Berdasarkann AO"
+            placeholder="input search text"
+            allowClear
+            onChange={(e) => onSearch(e.target.value)}
+            style={{
+              width: 304,
+              border: "1px solid #d9d9d9",
+              borderRadius: "8px",
+            }}
+          />
+        </Space>
         <Table
           columns={columns}
-          dataSource={dataTable}
+          dataSource={dataTabelDashboard}
           pagination={{
             pageSize: 4,
             showTotal: (total, range) =>

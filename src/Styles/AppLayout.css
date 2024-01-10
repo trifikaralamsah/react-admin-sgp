@@ -49,9 +49,9 @@
   border-color: #8d918e !important;
 }
 
-:where(.css-dev-only-do-not-override-17sses9).ant-input:focus {
+/* :where(.css-dev-only-do-not-override-17sses9).ant-input:focus {
   border: 1px solid #0515fa !important;
-}
+} */
 
 .ant-select .ant-select-selector {
   border-color: #8d918e !important;
