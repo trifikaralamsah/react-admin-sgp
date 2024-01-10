@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Row, Table } from "antd";
 import "../../Styles/Dashboard/TableDataSatu.css";
+import { shallowEqual, useSelector } from "react-redux";
 
 const style = {
   background: "#fff",
@@ -10,6 +11,10 @@ const style = {
 };
 
 const TableDataDua = () => {
+  const dataTable = useSelector(
+    (state) => state.tabelDashboard3.data,
+    shallowEqual
+  );
   const [page, setPage] = useState(1);
 
   const dateIndo2 = (data) => {
@@ -38,8 +43,8 @@ const TableDataDua = () => {
     },
     {
       title: "Jenis Nasabah",
-      dataIndex: "jenis_nasabah",
-      key: "jenis_nasabah",
+      dataIndex: "jenisNasabah",
+      key: "jenisNasabah",
       align: "center",
     },
     {
@@ -50,20 +55,20 @@ const TableDataDua = () => {
     },
     {
       title: "Status Apliasi",
-      dataIndex: "status_aplikasi",
-      key: "status_aplikasi",
+      dataIndex: "statusAplikasi",
+      key: "statusAplikasi",
       align: "center",
     },
     {
       title: "Kelengkapan Dokumen",
-      dataIndex: "kelengkapan_dokumen",
-      key: "kelengkapan_dokumen",
+      dataIndex: "kelengkapanDokumen",
+      key: "kelengDokumen",
       align: "center",
     },
     {
       title: "Dibuat Pada",
-      dataIndex: "dibuat_pada",
-      key: "dibuat_pada",
+      dataIndex: "dibuatPada",
+      key: "dibuatPada",
       align: "center",
       render: (value) => dateIndo2(value),
     },
@@ -78,58 +83,18 @@ const TableDataDua = () => {
     //   ),
     // },
   ];
-  const data = [
-    {
-      key: "1",
-      no_application: "01",
-      ao: "Muhammad Satrio",
-      jenis_nasabah: "Lembaga",
-      plafon: "Rp. 200.000.000",
-      status_aplikasi: "Disetujui",
-      kelengkapan_dokumen: "Lengkap",
-      dibuat_pada: "2023-02-09",
-    },
-    {
-      key: "2",
-      no_application: "02",
-      ao: "Muhammad Taufik",
-      jenis_nasabah: "Perorangan",
-      plafon: "Rp. 33.003.797,45",
-      status_aplikasi: "Unggah Dokumen",
-      kelengkapan_dokumen: "Belum Lengkap",
-      dibuat_pada: "2023-02-10",
-    },
-    {
-      key: "3",
-      no_application: "03",
-      ao: "Muhammad Iqbal",
-      jenis_nasabah: "Lembaga",
-      plafon: "Rp. 33.003.797,45",
-      status_aplikasi: "Disetujui",
-      kelengkapan_dokumen: "Lengkap",
-      dibuat_pada: "2023-02-11",
-    },
-    {
-      key: "4",
-      no_application: "04",
-      ao: "Tafarel Agustino",
-      jenis_nasabah: "Perorangan",
-      plafon: "Rp. 100.000.000",
-      status_aplikasi: "Dokumen Review",
-      kelengkapan_dokumen: "Sedang Direview",
-      dibuat_pada: "2023-02-12",
-    },
-    {
-      key: "5",
-      no_application: "05",
-      ao: "Tri Fikar Alamsah",
-      jenis_nasabah: "Perorangan",
-      plafon: "Rp. 100.000.000",
-      status_aplikasi: "Dokumen Review",
-      kelengkapan_dokumen: "Sedang Direview",
-      dibuat_pada: "2024-01-08",
-    },
-  ];
+  // const data = [
+  //   {
+  //     key: "1",
+  //     no_application: "01",
+  //     ao: "Muhammad Satrio",
+  //     jenis_nasabah: "Lembaga",
+  //     plafon: "Rp. 200.000.000",
+  //     status_aplikasi: "Disetujui",
+  //     kelengkapan_dokumen: "Lengkap",
+  //     dibuat_pada: "2023-02-09",
+  //   },
+  // ];
   return (
     <React.Fragment>
       <Row
@@ -142,7 +107,7 @@ const TableDataDua = () => {
       >
         <Table
           columns={columns}
-          dataSource={data}
+          dataSource={dataTable}
           pagination={{
             pageSize: 4,
             showTotal: (total, range) =>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Space, Table, message } from "antd";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import DeleteModal from "./DeleteDataModal";
@@ -117,11 +117,11 @@ const TableDataTiga = () => {
     },
     {
       title: "Dibuat Pada",
-      dataIndex: "dibuat_pada",
-      key: "dibuat_pada",
+      dataIndex: "dibuatPada",
+      key: "dibuatPada",
       align: "center",
       width: "15%",
-      render: (_, record) => <p>{dateIndo2(record.dibuat_pada)}</p>,
+      render: (_, record) => <p>{dateIndo2(record.dibuatPada)}</p>,
     },
     {
       title: "Action",
@@ -153,36 +153,11 @@ const TableDataTiga = () => {
   //     tugas: "Penyaringan Awal",
   //     status: "Selesai",
   //     catatan: "-",
-  //     dibuat_pada: "2023-02-09",
-  //   },
-  //   {
-  //     key: "2",
-  //     no: "02",
-  //     ao: "Muhammad Taufik",
-  //     tugas: "SLIK Upload",
-  //     status: "Belum Dikerjakan",
-  //     catatan: "Segera Diselesaikan",
-  //     dibuat_pada: "2023-02-10",
-  //   },
-  //   {
-  //     key: "3",
-  //     no: "03",
-  //     ao: "Muhammad Iqbal",
-  //     tugas: "SLIK Review",
-  //     status: "Sedang Dikerjakan",
-  //     catatan: "-",
-  //     dibuat_pada: "2023-02-11",
-  //   },
-  //   {
-  //     key: "4",
-  //     no: "04",
-  //     ao: "Tafarel Agustino",
-  //     tugas: "Document Entry",
-  //     status: "Sedang Dikerjakan",
-  //     catatan: "Pastikan Dokumen Lengkap",
-  //     dibuat_pada: "2023-02-12",
+  //     dibuatPada: "2023-02-09",
   //   },
   // ];
+
+  useEffect(() => {}, [selectedData]);
 
   return (
     <React.Fragment>

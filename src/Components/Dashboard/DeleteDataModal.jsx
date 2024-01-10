@@ -16,13 +16,10 @@ function DeleteModal({ openModal, data, handleOk, handleCancel }) {
         footer={false}
       >
         <Row style={{ padding: "10px", paddingBottom: "30px" }}>
-          {/* <Card> */}
           <Col span={24}>
-            {/* <Text strong>Data</Text> */}
             <Text>Apakah Anda yakin ingin menghapus Data ini?</Text>
             <Input value={data?.key} disabled style={{ display: "none" }} />
           </Col>
-          {/* </Card> */}
         </Row>
         <Row justify="end">
           <Space>

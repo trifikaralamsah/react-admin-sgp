@@ -47,112 +47,108 @@ const AppLayout = () => {
 
   const logOut = async () => {
     try {
-      // dispatch(logout());
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log(error.response.data);
     }
   };
   return (
-    <>
-      {/* <Clock format={"HH:mm:ss"} ticking={true} timezone={"US/Pacific"} /> */}
-      <Layout
-        style={{
-          minHeight: "100vh",
-          background: "black",
-        }}
+    <Layout
+      style={{
+        minHeight: "100vh",
+        background: "black",
+      }}
+    >
+      <Sider
+        collapsible
+        collapsed={collapsed}
+        onCollapse={(value) => setCollapsed(value)}
       >
-        <Sider
-          collapsible
-          collapsed={collapsed}
-          onCollapse={(value) => setCollapsed(value)}
+        <Menu
+          theme="dark"
+          selectedKeys={[location.pathname]}
+          mode="inline"
+          items={items}
+        />
+      </Sider>
+      <Layout style={{ background: backgroundColor }}>
+        <Header
+          style={{
+            padding: "0px 20px",
+            background: backgroundColor,
+          }}
         >
-          <Menu
-            theme="dark"
-            defaultSelectedKeys={[location.pathname]}
-            mode="inline"
-            items={items}
-          />
-        </Sider>
-        <Layout style={{ background: backgroundColor }}>
-          <Header
+          <Row
+            justify="space-between"
+            style={{ backgroundColor: colorBgContainer }}
+          >
+            <Col>
+              <Text style={{ fontSize: 15, marginLeft: 25 }}>
+                {time.toLocaleString("id-ID", {
+                  dateStyle: "full",
+                  timeStyle: "long",
+                  hour12: false,
+                })}
+              </Text>
+            </Col>
+            <Col>
+              <Menu
+                mode="horizontal"
+                style={{ width: 256 }}
+                items={[
+                  {
+                    label: "Muhammad Satrio Pamungkas",
+                    key: 1,
+                    icon: <UserOutlined />,
+                    children: [
+                      {
+                        label: (
+                          <a
+                            onClick={logOut}
+                            style={{
+                              fontSize: "15px",
+                              color: "red",
+                            }}
+                          >
+                            <LogoutOutlined /> Logout
+                          </a>
+                        ),
+                        key: 2,
+                      },
+                    ],
+                  },
+                ]}
+              />
+            </Col>
+          </Row>
+        </Header>
+        <Content
+          style={{
+            margin: "0 16px",
+            padding: "5px",
+            background: backgroundColor,
+          }}
+        >
+          <Breadcrumb
             style={{
-              padding: "0px 20px",
-              background: backgroundColor,
+              margin: "5px 0",
             }}
           >
-            <Row
-              justify="space-between"
-              style={{ backgroundColor: colorBgContainer }}
-            >
-              <Col>
-                <Text style={{ fontSize: 15, marginLeft: 25 }}>
-                  {time.toLocaleString("id-ID", {
-                    dateStyle: "full",
-                    timeStyle: "long",
-                    hour12: false,
-                  })}
-                </Text>
-              </Col>
-              <Col>
-                <Menu
-                  mode="horizontal"
-                  style={{ width: 256 }}
-                  items={[
-                    {
-                      label: "Muhammad Satrio Pamungkas",
-                      key: 1,
-                      icon: <UserOutlined />,
-                      children: [
-                        {
-                          label: (
-                            <a
-                              onClick={logOut}
-                              style={{
-                                fontSize: "15px",
-                                color: "red",
-                              }}
-                            >
-                              <LogoutOutlined /> Logout
-                            </a>
-                          ),
-                          key: 2,
-                        },
-                      ],
-                    },
-                  ]}
-                />
-              </Col>
-            </Row>
-          </Header>
-          <Content
-            style={{
-              margin: "0 16px",
-              padding: "5px",
-              background: backgroundColor,
-            }}
-          >
-            <Breadcrumb
-              style={{
-                margin: "5px 0",
-              }}
-            >
-              {/* <Breadcrumb.Item>User</Breadcrumb.Item> */}
-              {/* <Breadcrumb.Item>Bill</Breadcrumb.Item> */}
-            </Breadcrumb>
-            <Outlet />
-          </Content>
-          <Footer
-            style={{
-              textAlign: "center",
-              marginTop: "5px",
-            }}
-          >
-            Tri Fikar Alamsah ©{new Date().getFullYear()} Created by Fikar
-          </Footer>
-        </Layout>
+            {/* <Breadcrumb.Item>User</Breadcrumb.Item> */}
+            {/* <Breadcrumb.Item>Bill</Breadcrumb.Item> */}
+          </Breadcrumb>
+          <Outlet />
+        </Content>
+        <Footer
+          style={{
+            textAlign: "center",
+            marginTop: "5px",
+          }}
+        >
+          Tri Fikar Alamsah ©{new Date().getFullYear()} Created by Fikar
+        </Footer>
       </Layout>
-    </>
+    </Layout>
   );
 };
 export default AppLayout;

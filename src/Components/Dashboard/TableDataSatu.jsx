@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 import { Table } from "antd";
 import { imgAvatar } from "../../Assets";
+import { shallowEqual, useSelector } from "react-redux";
 
 const style = {
   background: "#fff",
@@ -17,6 +18,10 @@ const style = {
 };
 
 const TableDataSatu = () => {
+  const dataTable = useSelector(
+    (state) => state.tabelDashboard3.data,
+    shallowEqual
+  );
   const { Title, Text } = Typography;
   // const dataTable = useSelector(
   //   (state) => state.tabelDashboard3.data,
@@ -26,41 +31,26 @@ const TableDataSatu = () => {
 
   const columns = [
     {
-      title: "Ao",
+      title: "AO",
       dataIndex: "ao",
       key: "ao",
       align: "center",
     },
     {
       title: "Total Pengajuan",
-      dataIndex: "total_pengajuan",
-      key: "total_pengajuan",
+      dataIndex: "totalPengajuan",
+      key: "totalPengajuan",
       align: "center",
     },
   ];
 
-  const data = [
-    {
-      key: "1",
-      ao: "Muhammad Satrio Pamungkas",
-      total_pengajuan: 10,
-    },
-    {
-      key: "2",
-      ao: "Muhammad Taufik Fieri",
-      total_pengajuan: 8,
-    },
-    {
-      key: "3",
-      ao: "Muhammad Iqbal Setiawan",
-      total_pengajuan: 5,
-    },
-    {
-      key: "4",
-      ao: "Tafarel Agustino",
-      total_pengajuan: 3,
-    },
-  ];
+  // const data = [
+  //   {
+  //     key: "1",
+  //     ao: "Muhammad Satrio Pamungkas",
+  //     total_pengajuan: 10,
+  //   },
+  // ];
 
   return (
     <React.Fragment>
@@ -70,7 +60,7 @@ const TableDataSatu = () => {
             <Col span={16}>
               <Table
                 columns={columns}
-                dataSource={data}
+                dataSource={dataTable}
                 size="small"
                 bordered
                 tableLayout="fixed"

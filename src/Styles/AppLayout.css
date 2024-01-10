@@ -60,3 +60,10 @@
 .ant-select .ant-select-selector:focus {
   border: 1px solid #0515fa !important;
 }
+
+:where(
+    .css-dev-only-do-not-override-17sses9
+  ).ant-input-textarea-affix-wrapper.ant-input-affix-wrapper
+  > textarea.ant-input {
+  border: 1px solid #8d918e !important;
+}

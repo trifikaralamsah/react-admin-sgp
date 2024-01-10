@@ -3,12 +3,12 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import logger from "redux-logger";
 import rootReducer from "./Reducers/rootReducer";
-// import tabelDashboard1 from "./Reducers/Dashboard/tabelDashboard1";
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["tabelDashboard1", "tabelDashboard2", "tabelDashboard3"],
+  // blacklist: ["tabelDashboard3", "validateForm", "penyaringanAwal"],
+  blacklist: ["validateForm"],
 };
 
 export const store = configureStore({

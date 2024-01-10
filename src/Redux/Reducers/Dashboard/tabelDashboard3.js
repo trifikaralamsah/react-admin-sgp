@@ -6,36 +6,57 @@ const initialState = {
       key: "id53ba86a6e7b001",
       no: "01",
       ao: "Muhammad Satrio",
+      totalPengajuan: 10,
       tugas: "Penyaringan Awal",
       status: "Selesai",
       catatan: "-",
-      dibuat_pada: "2023-02-09",
+      dibuatPada: "2023-02-09",
+      jenisNasabah: "Lembaga",
+      plafon: "Rp. 200.000.000",
+      statusAplikasi: "Disetujui",
+      kelengkapanDokumen: "Lengkap",
     },
     {
       key: "id53ba86a6e7b002",
       no: "02",
       ao: "Muhammad Taufik",
+      totalPengajuan: 8,
       tugas: "SLIK Upload",
       status: "Belum Dikerjakan",
       catatan: "Segera Diselesaikan",
-      dibuat_pada: "2023-02-10",
+      dibuatPada: "2023-02-10",
+      jenisNasabah: "Perorangan",
+      plafon: "Rp. 33.003.797,45",
+      statusAplikasi: "Unggah Dokumen",
+      kelengkapanDokumen: "Belum Lengkap",
     },
     {
       key: "id53ba86a6e7b003",
       no: "03",
       ao: "Muhammad Iqbal",
+      totalPengajuan: 5,
       tugas: "SLIK Review",
       status: "Sedang Dikerjakan",
       catatan: "-",
-      dibuat_pada: "2023-02-11",
+      dibuatPada: "2023-02-11",
+      jenisNasabah: "Lembaga",
+      plafon: "Rp. 33.003.797,45",
+      statusAplikasi: "Disetujui",
+      kelengkapanDokumen: "Lengkap",
     },
     {
       key: "id53ba86a6e7b004",
       no: "04",
       ao: "Tafarel Agustino",
+      totalPengajuan: 3,
       tugas: "Document Entry",
       status: "Sedang Dikerjakan",
       catatan: "Pastikan Dokumen Lengkap",
+      dibuatPada: "2023-02-12",
+      jenisNasabah: "Perorangan",
+      plafon: "Rp. 100.000.000",
+      statusAplikasi: "Dokumen Review",
+      kelengkapanDokumen: "Sedang Direview",
       dibuat_pada: "2023-02-12",
     },
   ],
@@ -48,7 +69,7 @@ const tabelDashboard3Slice = createSlice({
     // setData: (state, action) => {
     //   state.data = action.payload;
     // },
-    addData: (state, action) => {
+    addDataDashboard3: (state, action) => {
       state.data.push(action.payload);
     },
     editData: (state, action) => {
@@ -65,6 +86,7 @@ const tabelDashboard3Slice = createSlice({
   },
 });
 
-export const { addData, editData, deleteData } = tabelDashboard3Slice.actions;
+export const { addDataDashboard3, editData, deleteData } =
+  tabelDashboard3Slice.actions;
 
 export default tabelDashboard3Slice.reducer;
