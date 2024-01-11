@@ -55,7 +55,7 @@ const TableDataSatu = () => {
   return (
     <React.Fragment>
       <Row gutter={16}>
-        <Col className="gutter-row" span={16}>
+        <Col className="gutter-row" xs={24} md={16}>
           <Row style={{ ...style, paddingTop: "17px", paddingBottom: "0px" }}>
             <Col span={16}>
               <Table
@@ -110,7 +110,7 @@ const TableDataSatu = () => {
             </Col>
           </Row>
         </Col>
-        <Col className="gutter-row" span={4}>
+        <Col className="gutter-row" xs={24} md={4}>
           <Row style={{ ...style, height: "100%" }}>
             <Col span={12}>
               <ClockCircleTwoTone
@@ -133,7 +133,7 @@ const TableDataSatu = () => {
             </Row>
           </Row>
         </Col>
-        <Col className="gutter-row" span={4}>
+        <Col className="gutter-row" xs={24} md={4}>
           <Row style={{ ...style, height: "100%" }}>
             <Col span={12}>
               <ClockCircleTwoTone

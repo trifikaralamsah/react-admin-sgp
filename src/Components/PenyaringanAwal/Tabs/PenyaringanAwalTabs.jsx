@@ -96,7 +96,7 @@ const PenyaringanAwalTabs = ({ ...props }) => {
             </Col>
           </Row>
           <Row gutter={69}>
-            <Col span={12}>
+            <Col xs={24} md={12}>
               <Form.Item label="No Aplikasi" name={"noAplikasi"}>
                 <Space.Compact style={{ width: "100%" }}>
                   <Input placeholder="No Aplikasi" />
@@ -162,7 +162,7 @@ const PenyaringanAwalTabs = ({ ...props }) => {
                 <Input placeholder="NPWP" />
               </Form.Item>
             </Col>
-            <Col span={12}>
+            <Col xs={24} md={12}>
               <Form.Item
                 label="Jenis Nasabah"
                 name={"jenisNasabah"}

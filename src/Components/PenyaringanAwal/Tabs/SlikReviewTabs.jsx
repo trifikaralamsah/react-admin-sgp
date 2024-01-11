@@ -108,7 +108,7 @@ function SlikReviewTabs({ ...props }) {
             </Col>
           </Row>
           <Row gutter={50}>
-            <Col span={8}>
+            <Col sm={24} md={8}>
               <Title
                 level={5}
                 style={{ margin: 0, padding: 0, paddingBottom: 10 }}
@@ -116,8 +116,10 @@ function SlikReviewTabs({ ...props }) {
                 Data Debitur
               </Title>
             </Col>
-            <Col span={8}>&nbsp;</Col>
-            <Col span={8}>
+            <Col sm={24} md={8}>
+              &nbsp;
+            </Col>
+            <Col sm={24} md={8}>
               <Title
                 level={5}
                 style={{ margin: 0, padding: 0, paddingBottom: 10 }}
@@ -127,7 +129,7 @@ function SlikReviewTabs({ ...props }) {
             </Col>
           </Row>
           <Row gutter={50}>
-            <Col span={8}>
+            <Col sm={24} md={8}>
               <Form.Item
                 label="Nama Pemohon"
                 name={"namaPemohon"}
@@ -201,7 +203,7 @@ function SlikReviewTabs({ ...props }) {
                 />
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col sm={24} md={8}>
               <Form.Item
                 label="Informasi SLIK"
                 name={"informasiSlik"}
@@ -267,7 +269,7 @@ function SlikReviewTabs({ ...props }) {
                 <Input placeholder="Baki Debet" />
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col sm={24} md={8}>
               <Form.Item
                 label="Bank Umum"
                 name={"bankUmum"}
@@ -316,7 +318,7 @@ function SlikReviewTabs({ ...props }) {
             <Title level={5}>Hasil Penyaringan</Title>
           </Row>
           <Row gutter={50}>
-            <Col span={8}>
+            <Col sm={24} md={8}>
               <Form.Item
                 label="Kolektabilitas Tertinggi"
                 name={"kolektabilitasTertinggi"}
@@ -324,8 +326,10 @@ function SlikReviewTabs({ ...props }) {
                 <Input placeholder="Kolektabilitas Tertinggi" />
               </Form.Item>
             </Col>
-            <Col span={8}>&nbsp;</Col>
-            <Col span={8}>
+            <Col sm={24} md={8}>
+              &nbsp;
+            </Col>
+            <Col sm={24} md={8}>
               <Form.Item label="Kesimpulan" name={"kesimpulan"}>
                 <Input placeholder="Kesimpulan" />
               </Form.Item>

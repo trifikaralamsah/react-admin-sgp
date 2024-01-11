@@ -20,7 +20,7 @@ const ProfileComponent = () => {
   return (
     <React.Fragment>
       <Row gutter={16}>
-        <Col className="gutter-row" span={16}>
+        <Col className="gutter-row" xs={24} md={16}>
           <Row style={style}>
             <Col span={16}>
               <Title level={4} style={{ color: "#52c41a", marginTop: "0px" }}>
@@ -65,7 +65,7 @@ const ProfileComponent = () => {
             </Col>
           </Row>
         </Col>
-        <Col className="gutter-row" span={4}>
+        <Col className="gutter-row" xs={24} md={4}>
           <Row style={{ ...style, height: "100%" }}>
             <Col span={12}>
               <CreditCardTwoTone
@@ -88,7 +88,7 @@ const ProfileComponent = () => {
             </Row>
           </Row>
         </Col>
-        <Col className="gutter-row" span={4}>
+        <Col className="gutter-row" xs={24} md={4}>
           <Row style={{ ...style, height: "100%" }}>
             <Col span={12}>
               <CreditCardTwoTone

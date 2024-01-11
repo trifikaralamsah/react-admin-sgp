@@ -61,7 +61,7 @@ const AppLayout = () => {
     >
       <Sider
         collapsible
-        collapsed={collapsed}
+        collapsed={screen.width < 501 ? true : collapsed}
         onCollapse={(value) => setCollapsed(value)}
       >
         <Menu
@@ -84,17 +84,23 @@ const AppLayout = () => {
           >
             <Col>
               <Text style={{ fontSize: 15, marginLeft: 25 }}>
-                {time.toLocaleString("id-ID", {
-                  dateStyle: "full",
-                  timeStyle: "long",
-                  hour12: false,
-                })}
+                {screen.width < 501
+                  ? time.toLocaleString("id-ID", {
+                      dateStyle: "short",
+                      timeStyle: "short",
+                      hour12: false,
+                    })
+                  : time.toLocaleString("id-ID", {
+                      dateStyle: "full",
+                      timeStyle: "long",
+                      hour12: false,
+                    })}
               </Text>
             </Col>
             <Col>
               <Menu
                 mode="horizontal"
-                style={{ width: 256 }}
+                style={screen.width < 501 ? {} : { width: 256 }}
                 items={[
                   {
                     label: "Muhammad Satrio Pamungkas",

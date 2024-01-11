@@ -118,6 +118,7 @@ const TableDataDua = () => {
           }}
           size="medium"
           style={{ width: "100%" }}
+          scroll={{ x: 400 }}
         />
       </Row>
     </React.Fragment>

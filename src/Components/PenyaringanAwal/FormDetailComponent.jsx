@@ -49,7 +49,7 @@ const FormDetailComponent = ({ form }) => {
         </Row>
         <Form form={form} layout="vertical">
           <Row gutter={69}>
-            <Col span={12}>
+            <Col xs={24} md={12}>
               <Form.Item
                 label="Nama AO"
                 required
@@ -83,7 +83,7 @@ const FormDetailComponent = ({ form }) => {
                 />
               </Form.Item>
             </Col>
-            <Col span={12}>
+            <Col xs={24} md={12}>
               <Form.Item
                 label="Nama Cabang"
                 required

@@ -121,7 +121,7 @@ function UnggahDokumenTabs({ ...props }) {
   // End Unggah Dokumen
 
   useEffect(() => {
-    console.log("aja", validateFormReducer);
+    // console.log("fikar", validateFormReducer);
   }, [validateFormReducer, dispatch]);
 
   return (
@@ -140,7 +140,7 @@ function UnggahDokumenTabs({ ...props }) {
             </Col>
           </Row>
           <Row gutter={50}>
-            <Col span={8}>
+            <Col sm={24} md={8}>
               <Form.Item label="Slip Gaji" name={"slipGaji"}>
                 <Upload
                   accept=".doc,.docx,application/pdf,image/png,image/jpg,image/jpeg"
@@ -238,7 +238,7 @@ function UnggahDokumenTabs({ ...props }) {
                 </Upload>
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col sm={24} md={8}>
               <Form.Item
                 label="Buku Tabungan / Rekening Koran"
                 name={"bukuTabungan"}

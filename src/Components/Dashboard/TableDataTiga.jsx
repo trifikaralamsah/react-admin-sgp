@@ -199,12 +199,11 @@ const TableDataTiga = () => {
           }}
         >
           <Search
-            addonBefore="Cari Berdasarkann AO"
+            addonBefore={"Cari Berdasarkann AO"}
             placeholder="input search text"
             allowClear
             onChange={(e) => onSearch(e.target.value)}
             style={{
-              width: 304,
               border: "1px solid #d9d9d9",
               borderRadius: "8px",
             }}
@@ -223,6 +222,7 @@ const TableDataTiga = () => {
           }}
           size="medium"
           style={{ width: "100%" }}
+          scroll={{ x: 400 }}
         />
       </Row>
 
