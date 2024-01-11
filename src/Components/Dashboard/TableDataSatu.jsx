@@ -93,10 +93,14 @@ const TableDataSatu = () => {
                 </Text>
                 <Image
                   src={imgAvatar}
-                  style={{
-                    height: "105px",
-                    width: "115px",
-                  }}
+                  style={
+                    screen.width < 501
+                      ? { border: "1px solid #e8e8e8" }
+                      : {
+                          height: "105px",
+                          width: "115px",
+                        }
+                  }
                 ></Image>
                 <Text
                   style={{
